@@ -45,4 +45,23 @@ public class TemplateMethodTest {
 
     }
 
+    @Test
+    void templateMethodV2() {
+        AbstractTemplate template1 = new AbstractTemplate() {
+            @Override
+            protected void function() {
+                log.info("비즈니스 로직1 수행");
+            }
+        };
+        template1.execute();
+
+        AbstractTemplate template2 = new AbstractTemplate() {
+            @Override
+            protected void function() {
+                log.info("비즈니스 로직2 수행");
+            }
+        };
+        template2.execute();
+    }
+
 }
